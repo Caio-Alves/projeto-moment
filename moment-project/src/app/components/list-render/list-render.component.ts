@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Animal } from '../Animal';
 
 @Component({
   selector: 'app-list-render',
@@ -6,11 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-render.component.css']
 })
 export class ListRenderComponent {
-  animals = [
-    {name: 'Turca', type: "Dog"},
-    {name: 'Tom', type: "Cat"},
-    {name: 'Frida', type: 'Dog'},
-    {name: 'Bob', type: 'Horse'},
+  animalDetails = '';
+  animals: Animal[] = [
+    {name: 'Turca', type: "Dog", age: 4},
+    {name: 'Tom', type: "Cat", age: 10},
+    {name: 'Frida', type: 'Dog', age: 5},
+    {name: 'Bob', type: 'Horse', age: 1},
   ];
+
+  showAge(animal: Animal){
+    this.animalDetails = `O pet ${animal.name} tem ${animal.age} anos!`;
+     
+  }
 
 }
